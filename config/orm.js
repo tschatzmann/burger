@@ -47,10 +47,14 @@ var orm = {
       if (err) {
         throw err;
       }
+      console.log(result)
       cb(result);
     });
   },
   create: function(table, cols, vals, cb) {
+    console.log('in omr create');
+    console.log(vals);
+    console.log(printQuestionMarks(vals.length));
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -92,6 +96,8 @@ var orm = {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
+
+    console.log(queryString)
 
     connection.query(queryString, function(err, result) {
       if (err) {

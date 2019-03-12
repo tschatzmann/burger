@@ -26,9 +26,10 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        name: $("#ca").val().trim(),
+        burger_name: $("#ca").val().trim(),
         devoured: $("[name=devoured]:checked").val().trim()
       };
+      console.log('newBurger ' + newBurger);
   
       // Send the POST request.
       $.ajax("/api/burgers", {
@@ -38,13 +39,14 @@ $(function() {
         function() {
           console.log("created new Burger");
           // Reload the page to get the updated list
-          loburgerion.reload();
+          location.reload();
         }
       );
     });
   
     $(".delete-burger").on("click",function(event){
       event.preventDefault();
+      alert('clicked')
       var id = $(this).data("id");
       console.log("delete id " + id);
       // Send the PUT request.

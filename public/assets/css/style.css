@@ -1,7 +1,6 @@
 li {
     padding: 5px;
     margin: 5px;
-    background: orangered;
   }
   
   .label {
@@ -18,3 +17,6 @@ li {
     margin-bottom: 5px;
   }
   
+  button{
+    background: purple;
+  }

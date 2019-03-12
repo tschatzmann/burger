@@ -4,11 +4,14 @@ var orm = require("../config/orm.js");
 var burger = {
   all: function(cb) {
     orm.all("burgers", function(res) {
+      console.log(res)
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
+    console.log('in burger.js Create');
+    console.log(vals);
     orm.create("burgers", cols, vals, function(res) {
       cb(res);
     });
@@ -20,6 +23,8 @@ var burger = {
   },
   //delete
   delete: function(condition, cb) {
+    console.log('in burger.js delete');
+    console.log(condition),
     orm.delete("burgers", condition, function(res) {
       cb(res);
     });
