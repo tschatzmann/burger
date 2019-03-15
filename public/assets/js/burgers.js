@@ -46,7 +46,7 @@ $(function() {
   
     $(".delete-burger").on("click",function(event){
       event.preventDefault();
-      alert('clicked')
+      //alert('clicked')
       var id = $(this).data("id");
       console.log("delete id " + id);
       // Send the PUT request.

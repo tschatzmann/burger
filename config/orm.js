@@ -98,8 +98,8 @@ var orm = {
     queryString += condition;
 
     console.log(queryString)
-
     connection.query(queryString, function(err, result) {
+      console.log(result);
       if (err) {
         throw err;
       }
